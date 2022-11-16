@@ -1,7 +1,7 @@
 import telebot
 from pycotacao import get_exchange_rates, CurrencyCodes
 
-CHAVE_API = "5758637736:AAHYd0RGyaaIU2UkEG9dOBOYnmdhqAlgmeU"
+CHAVE_API = "5709917301:AAHfPJpcjhOonGUvbyat6R8e_4zLrgC3abg"
 
 bot = telebot.TeleBot(CHAVE_API)
 help_text = """
@@ -9,7 +9,7 @@ Cotações em reais hoje:
 
     Por moedas
     /dolar
-    /dolar_autraliano
+    /dolar_australiano
     /euro
     /rand
     /yuan
@@ -32,8 +32,8 @@ def dolar(mensagem):
     bot.send_message(mensagem.chat.id, show_coin_quotation(CurrencyCodes.USD))
 
 # Moeda mais usada na Oceania
-@bot.message_handler(commands=["dolar_autraliano"])
-def dolar_autraliano(mensagem):
+@bot.message_handler(commands=["dolar_australiano"])
+def dolar_australiano(mensagem):
     bot.send_message(mensagem.chat.id, show_coin_quotation(CurrencyCodes.CAD))
 
 # Moeda mais usada na Europa
